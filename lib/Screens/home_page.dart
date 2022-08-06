@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Appsite Store"),
       ),
-      body: Center(child:Container(child: Text("Welcome to my page"),) ),
+      body: Center(child:Container(child: Text("Welcome to Home page"),) ),
       drawer: Drawer(),
     );
   }
