@@ -10,17 +10,18 @@ class LoginPage extends StatelessWidget {
         children: [
           
           Image.asset(
-            "assets/images/logimage.png",width: 150, height: 130,
+            "assets/images/logimage.png",width: 150, height: 90,
         ),
-        // SizedBox(height: 20,),
-        Text(
-          "Welcome",
-          style: TextStyle(
-            fontSize: 26,
-            fontWeight: FontWeight.bold,
-          ), ),
+        // SizedBox(height: 20,)
+         Text(
+            "Welcome",
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ), ),
+
 Padding(
-  padding: const EdgeInsets.symmetric(vertical:16,horizontal: 35),
+  padding: const EdgeInsets.symmetric(vertical:10,horizontal: 35,),
   child:   Column(children: [
      TextFormField(
       decoration: InputDecoration(
