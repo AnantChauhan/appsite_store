@@ -11,7 +11,7 @@ class ExampleApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.deepOrange),
-      title: 'How Much Anant Loves Arya',
+      title: 'Collet Daily Reward',
       home: ExamplePage(),
     );
   }
@@ -34,19 +34,19 @@ class _ExamplePageState extends State<ExamplePage> {
   @override
   Widget build(BuildContext context) {
     final items = <String>[
-      '100%',
-      '80%',
-      '90%',
-      '0%',
-      'Infinity Love',
-      '50%',
-      '95%',
-      '22%',
+      '100',
+      '800',
+      '125',
+      'Better Luck Next Time',
+      '500',
+      '10',
+      '350',
+      '999',
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('How Much Anant Loves Arya'),
+        title: Text('Collet Daily Reward'),
       ),
       body: GestureDetector(
         onTap: () {

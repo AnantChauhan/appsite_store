@@ -5,7 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:scroll_navigation/scroll_navigation.dart';
 
-void main() => runApp(App());
+void main() 
+{
+  runApp(App());
+}
 
 class App extends StatelessWidget {
   @override
@@ -18,6 +21,14 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Scroll Navigation Demo',
       home: AdvancedNavigation(),
+ 
+
+initialRoute: "/login",
+      routes: {
+        "/sample":(context) => ExampleApp(),
+        "/login":(context) => LoginPage(),
+        "/home":(context) => HomePage(),
+      },
     );
   }
 }
