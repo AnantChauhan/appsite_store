@@ -1,9 +1,11 @@
 import 'package:appsite_store/Screens/login_page.dart';
 import 'package:appsite_store/Screens/home_page.dart';
 import 'package:appsite_store/Screens/sample.dart';
+import 'package:appsite_store/utils/routes.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:scroll_navigation/scroll_navigation.dart';
+import 'package:flutter/src/widgets/binding.dart';
 
 void main() 
 {
@@ -25,81 +27,81 @@ class App extends StatelessWidget {
 
 initialRoute: "/login",
       routes: {
-        "/sample":(context) => ExampleApp(),
-        "/login":(context) => LoginPage(),
-        "/home":(context) => HomePage(),
+        Myroutes.sampleroutes:(context) => ExampleApp(),
+        Myroutes.loginroute:(context) => LoginPage(),
+        Myroutes.homeroutes:(context) => HomePage(),
+        // Myroutes.Approutes:(context) => App(),
       },
     );
   }
 }
 
-//-------------//
 //EASY EXAMPLES//
 //-------------//
-class EasyHorizontalNavigation extends StatelessWidget {
+// class EasyHorizontalNavigation extends StatelessWidget {
  
 
-  @override
-  Widget build(BuildContext context) {
-    return ScrollNavigation(
-      bodyStyle: NavigationBodyStyle(
-        background: Colors.white,
-        borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
-      ),
-      barStyle: NavigationBarStyle(
-        background: Colors.white,
-        elevation: 0.0,
-      ),
-      pages: [
-        Container(color: Colors.blue[100]),
-        Container(color: Colors.green[100]),
-        Container(color: Colors.purple[100]),
-        Container(color: Colors.amber[100]),
-        Container(color: Colors.deepOrange[100])
-      ],
-      items: const [
-        ScrollNavigationItem(icon: Icon(Icons.camera)),
-        ScrollNavigationItem(icon: Icon(Icons.chat)),
-        ScrollNavigationItem(icon: Icon(Icons.favorite)),
-        ScrollNavigationItem(icon: Icon(Icons.notifications)),
-        ScrollNavigationItem(icon: Icon(Icons.home))
-      ],
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return ScrollNavigation(
+//       bodyStyle: NavigationBodyStyle(
+//         background: Colors.white,
+//         borderRadius: BorderRadius.vertical(bottom: Radius.circular(20)),
+//       ),
+//       barStyle: NavigationBarStyle(
+//         background: Colors.white,
+//         elevation: 0.0,
+//       ),
+//       pages: [
+//         Container(color: Colors.blue[100]),
+//         Container(color: Colors.green[100]),
+//         Container(color: Colors.purple[100]),
+//         Container(color: Colors.amber[100]),
+//         Container(color: Colors.deepOrange[100])
+//       ],
+//       items: const [
+//         ScrollNavigationItem(icon: Icon(Icons.camera)),
+//         ScrollNavigationItem(icon: Icon(Icons.chat)),
+//         ScrollNavigationItem(icon: Icon(Icons.login)),
+//         ScrollNavigationItem(icon: Icon(Icons.notifications)),
+//         ScrollNavigationItem(icon: Icon(Icons.home))
+//       ],
+//     );
+//   }
+// }
 
-class EasyVerticalNavigation extends StatelessWidget {
+// // class EasyVerticalNavigation extends StatelessWidget {
 
-  @override
-  Widget build(BuildContext context) {
-    return ScrollNavigation(
-      bodyStyle: NavigationBodyStyle(
-        background: Colors.white,
-        borderRadius: BorderRadius.horizontal(left: Radius.circular(20)),
-        scrollDirection: Axis.vertical,
-      ),
-      barStyle: NavigationBarStyle(
-        position: NavigationPosition.left,
-        elevation: 0.0,
-        background: Colors.white,
-      ),
-      pages: [
-        Container(color: Colors.blue[100]),
-        Container(color: Colors.green[100]),
-        Container(color: Colors.purple[100]),
-        Container(color: Colors.amber[100]),
-        Container(color: Colors.deepOrange[100])
-      ],
-      items: const [
-        ScrollNavigationItem(icon: Icon(Icons.camera)),
-        ScrollNavigationItem(icon: Icon(Icons.chat)),
-        ScrollNavigationItem(icon: Icon(Icons.favorite)),
-        ScrollNavigationItem(icon: Icon(Icons.notifications)),
-        ScrollNavigationItem(icon: Icon(Icons.home))
-      ],
-    );
-  }
-}
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return ScrollNavigation(
+// //       bodyStyle: NavigationBodyStyle(
+// //         background: Colors.white,
+// //         borderRadius: BorderRadius.horizontal(left: Radius.circular(20)),
+// //         scrollDirection: Axis.vertical,
+// //       ),
+// //       barStyle: NavigationBarStyle(
+// //         position: NavigationPosition.left,
+// //         elevation: 0.0,
+// //         background: Colors.white,
+// //       ),
+// //       pages: [
+// //         Container(color: Colors.blue[100]),
+// //         Container(color: Colors.green[100]),
+// //         Container(color: Colors.purple[100]),
+// //         Container(color: Colors.amber[100]),
+// //         Container(color: Colors.deepOrange[100])
+// //       ],
+// //       items: const [
+// //         ScrollNavigationItem(icon: Icon(Icons.camera)),
+// //         ScrollNavigationItem(icon: Icon(Icons.chat)),
+// //         ScrollNavigationItem(icon: Icon(Icons.favorite)),
+// //         ScrollNavigationItem(icon: Icon(Icons.notifications)),
+// //         ScrollNavigationItem(icon: Icon(Icons.home))
+// //       ],
+// //     );
+// //   }
+// // }
 
 //----------------//
 //ADVANCED EXAMPLE//
@@ -118,7 +120,7 @@ class _AdvancedNavigationState extends State<AdvancedNavigation> {
       key: navigationKey,
       pages: [
         Screen(
-          appBar: AppBarTitle(title: "Camera"),
+          appBar: AppBarTitle(title: "Account"),
         ),
         Screen(
           appBar: AppBarTitle(title: "Messages"),
@@ -133,7 +135,7 @@ class _AdvancedNavigationState extends State<AdvancedNavigation> {
         Screen(appBar: AppBarTitle(title: "Home"))
       ],
       items: const [
-        ScrollNavigationItem(icon: Icon(Icons.camera)),
+        ScrollNavigationItem(icon: Icon(Icons.logout)),
         ScrollNavigationItem(icon: Icon(Icons.chat)),
         ScrollNavigationItem(icon: Icon(Icons.favorite)),
         ScrollNavigationItem(icon: Icon(Icons.notifications)),
@@ -182,7 +184,7 @@ class _TitleScrollScreenState extends State<TitleScrollScreen> {
       color: Colors.white,
       child: SafeArea(
         child: Screen(
-          appBar: AppBarTitle(title: "Title Scroll", showBack: true),
+          appBar: AppBarTitle(title: "MY LIBRARY", showBack: true),
           controllerToHideAppBar: controller,
           body: TitleScrollNavigation(
             barStyle: TitleNavigationBarStyle(
@@ -195,7 +197,7 @@ class _TitleScrollScreenState extends State<TitleScrollScreen> {
               "Personal Information",
               "Personalization",
               "Security",
-              "Payment Methods",
+              "Expenses",
             ],
             pages: [
               ListView.builder(

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:appsite_store/Screens/login_page.dart';
+import 'package:appsite_store/utils/routes.dart';
 import 'package:flutter/services.dart';
 import 'package:scroll_navigation/scroll_navigation.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +11,7 @@ class ExampleApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.deepOrange),
       title: 'Collet Daily Reward',
       home: ExamplePage(),
@@ -94,17 +96,17 @@ class _DemoAppState extends State<DemoApp> {
     
       
         return MaterialApp.router(
-          title: 'How Much Anant Loves Arya',
+          title: 'Collect Daily reward',
       
           
           routerDelegate: _appRouter.delegate(),
           routeInformationParser: _appRouter.defaultRouteParser(),
-        
       
     );
-  }
 }
+  }
 
 AppRouter() {
 }
+
 
